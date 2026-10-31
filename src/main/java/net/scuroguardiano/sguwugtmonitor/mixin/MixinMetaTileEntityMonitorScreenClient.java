@@ -2,6 +2,8 @@ package net.scuroguardiano.sguwugtmonitor.mixin;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.scuroguardiano.sguwugtmonitor.api.IMonitorScreenExtensions;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +21,9 @@ public class MixinMetaTileEntityMonitorScreenClient {
             at = @At(
                      value = "INVOKE",
                      target = "Lnet/minecraft/client/renderer/GlStateManager;scale(FFF)V",
-                     shift = At.Shift.BEFORE))
+                     shift = At.Shift.BEFORE,
+                     remap = true))
+    @SideOnly(Side.CLIENT)
     private void sguwugtmonitor$renderScreen(float partialTicks, RayTraceResult rayTraceResult, CallbackInfo ci) {
         IMonitorScreenExtensions self = (IMonitorScreenExtensions) this;
         GlStateManager.translate(self.getOffsetX(), self.getOffsetY(), 0);
