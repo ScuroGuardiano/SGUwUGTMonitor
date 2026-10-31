@@ -1,0 +1,13 @@
+{
+  "package": "net.scuroguardiano.sguwugtmonitor.mixin",
+  "refmap": "mixins.sguwugtmonitor.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinMetaTileEntityCentralMonitor",
+    "MixinMetaTileEntityMonitorScreen"
+  ],
+  "client": [],
+  "server": []
+}

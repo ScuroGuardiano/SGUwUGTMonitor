@@ -1,0 +1,11 @@
+[{
+    "modid": "${modid}",
+    "name": "${modname}",
+    "description": "Improvements to Central Monitor in GTCEu to make my anime pictures be displayed on full screen!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/ScuroGuardiano/SGUwUGTMonitor",
+    "authorList": ["ScuroGuardiano"],
+    "credits": "ZBGT for borrowed code and project scaffold :3",
+    "dependencies": ["gregtech"]
+}]
