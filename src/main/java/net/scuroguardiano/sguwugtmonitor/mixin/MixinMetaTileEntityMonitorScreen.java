@@ -1,11 +1,9 @@
 package net.scuroguardiano.sguwugtmonitor.mixin;
 
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.RayTraceResult;
 import net.scuroguardiano.sguwugtmonitor.api.IMonitorScreenExtensions;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -115,16 +113,6 @@ public abstract class MixinMetaTileEntityMonitorScreen extends MetaTileEntity im
         sguwugtmonitor$offsetX = data.hasKey("offsetX") ? data.getFloat("offsetX") : 0;
         sguwugtmonitor$offsetY = data.hasKey("offsetY") ? data.getFloat("offsetY") : 0;
         sguwugtmonitor$zIndex = data.hasKey("zIndex") ? data.getInteger("zIndex") : 0;
-    }
-
-    @Inject(
-            method = "renderScreen",
-            at = @At(
-                     value = "INVOKE",
-                     target = "Lnet/minecraft/client/renderer/GlStateManager;scale(FFF)V",
-                     shift = At.Shift.BEFORE))
-    private void sguwugtmonitor$renderScreen(float partialTicks, RayTraceResult rayTraceResult, CallbackInfo ci) {
-        GlStateManager.translate(sguwugtmonitor$offsetX, sguwugtmonitor$offsetY, 0);
     }
 
     @Override

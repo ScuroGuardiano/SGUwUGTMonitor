@@ -8,6 +8,6 @@
     "MixinMetaTileEntityCentralMonitor",
     "MixinMetaTileEntityMonitorScreen"
   ],
-  "client": [],
+  "client": ["MixinMetaTileEntityMonitorScreenClient"],
   "server": []
 }
